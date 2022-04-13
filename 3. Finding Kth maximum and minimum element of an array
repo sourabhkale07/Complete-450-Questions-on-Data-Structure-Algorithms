@@ -1,0 +1,22 @@
+#include <iostream>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+    int arr[] = {21,23,54,5,69,56};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    
+    int k;
+    cout<<"Enter the number k"<<endl;
+    cin>>k;
+    
+    sort(arr,arr+size);    // sorting array using stl time complexity O(nlogn)
+   
+    cout<<"kth smallest no :"<<arr[k-1]<<endl;
+    cout<<"kth smallest no :"<<arr[size-k]<<endl;
+    
+    
+    return 0;
+}
