@@ -1,0 +1,76 @@
+#include <iostream>
+#include<vector>
+
+using namespace std;
+
+int main()
+{
+    int arr1[] = {3,5,6,9,10};
+    int arr2[] ={2,5,7,9};
+    
+    int size1 = sizeof(arr1)/sizeof(arr1[0]);
+    int size2 = sizeof(arr2)/sizeof(arr2[0]);
+    
+    vector<int> v1 ;
+    int i=0;
+    int j=0;
+    
+    
+    while(i<size1 && j<size2){
+        if(arr1[i]<arr2[j]){
+            v1.push_back(arr1[i]);
+            i++;
+        }
+        else if(arr1[i]==arr2[j]){
+            v1.push_back(arr1[i]);
+            i++;
+            j++;
+        }
+        else{
+            v1.push_back(arr2[j]);
+            j++;
+        }
+        
+    }
+    
+    while(i<size1){
+        v1.push_back(arr1[i]);
+        i++;
+    }
+    
+     while(j<size2){
+        v1.push_back(arr2[j]);
+        j++;
+    }
+    
+    cout << "Union :";
+    for (int k = 0; k < v1.size(); k++)
+        cout << v1[k] << " ";
+    
+    cout<<endl;
+    vector<int> v2;
+    
+    i=0;
+    j=0;
+    
+     while(i<size1 && j<size2){
+        if(arr1[i]<arr2[j]){
+            i++;
+        }
+        else if(arr1[i]==arr2[j]){
+            v2.push_back(arr1[i]);
+            i++;
+            j++;
+        }
+        else{
+            j++;
+        }
+        
+    }
+    cout << "Intersection :";
+    for (int k = 0; k < v2.size(); k++)
+        cout << v2[k] << " ";
+    
+
+    return 0;
+}
