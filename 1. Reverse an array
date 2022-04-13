@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+void swap(int *a,int *b){
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b= temp;
+   }
+
+void printarr(int a[],int n){
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main()
+{
+    int arr[] = {21,23,54,5,69,56};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    
+    int i=0,j=size-1;
+    
+    cout<<"Original array"<<endl;
+    printarr(arr,size);
+    
+    
+    while(i<j){
+        swap(&arr[i],&arr[j]);
+        i++;
+        j--;
+    }
+    
+    cout<<"Reversed array"<<endl;
+    printarr(arr,size);
+    
+    
+    
+    
+    return 0;
+}
