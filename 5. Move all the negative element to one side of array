@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+void swap(int *a,int *b){
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b= temp;
+   }
+   
+   void printarr(int a[],int n){
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main()
+{
+    int arr[] = {4,-78,-43,12,-3,90};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    
+    int i=0,j=size-1;
+    
+    while(j>=i){
+        
+        for(int k=0;k<size;k++){          Time complexity O(n^2)
+            if(arr[i]>=0){
+            i++;
+            }
+            if(arr[j]<0){
+            j--;
+            }
+        }
+        
+        
+        swap(&arr[i],&arr[j]);
+        i++;
+        j--;
+        
+    }
+   printarr(arr,size); 
+    return 0;
+}
