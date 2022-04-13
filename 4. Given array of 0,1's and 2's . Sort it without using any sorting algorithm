@@ -1,0 +1,57 @@
+#include <iostream>
+
+using namespace std;
+
+void swap(int *a,int *b){
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b= temp;
+   }
+   
+   void printarr(int a[],int n){
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main()
+{
+    int arr[] = {1,0,2,1,1,0,2};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    
+    int i;
+    i=0 ;
+    
+    int count=0;
+    int flag ;
+    
+   while(count<=3){
+       flag =0;
+        if(arr[i]==count){       
+            i++;
+        }
+        
+        else{
+            for(int k=i+1;k<size;k++){     // search for count in remaining array
+                if(arr[k]==count){
+                swap(&arr[k],&arr[i]);
+                i++;
+                flag=1;
+                break;
+                }
+            }
+            if(flag==0){
+            count++;
+        }    
+    }
+   
+    }
+   
+   printarr(arr,size);
+    
+    
+    
+    return 0;
+}
