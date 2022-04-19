@@ -44,3 +44,7 @@ int main()
 }
 
 // We get sorted arrays if we merge them we will get the final array
+
+//Time complexity: O(n*m)
+
+//Space Complexity: O(1) 
