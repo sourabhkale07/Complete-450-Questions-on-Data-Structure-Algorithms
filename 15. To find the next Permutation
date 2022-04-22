@@ -1,0 +1,65 @@
+// Program to find the next permutation
+// This question is also part of Striver SDE sheet 
+
+// Algorithm 
+/* trace the array from right to left till we get left element smaller than right a[i]<a[i+1] then search a element just 
+greater than a[i] i.e.  a[j]>a[i]    then swap(a[i],a[j])
+Now in the array reverse the element of indexes(i+1 ---- n-1)          */
+
+
+#include <iostream>
+using namespace std;
+
+
+void swap(int *a,int *b){
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void reverse(int a[],int i,int j){
+     while(i<j){
+        swap(&a[i],&a[j]);
+        i++;
+        j--;
+    }
+}
+
+void printarr(int a[],int n){
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main()
+{   
+    int n;
+    cout<<"Enter the size of array"<<endl;
+    cin>>n;
+    int arr[n];
+    
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    
+    int i = n-2;
+    
+    while(i>=0 && arr[i]>=arr[i+1]){
+        i--;
+    }
+    
+    if(i>=0){
+        int j= n-1;
+        while(j>=0 && arr[j]<arr[i]){
+            j--;
+        }
+        swap(&arr[i],&arr[j]);
+    }
+    
+    reverse(arr,i+1,n-1);
+    printarr(arr,n);
+
+    return 0;
+}
