@@ -15,7 +15,7 @@ int main()
     sort(arr,arr+size);    // sorting array using stl time complexity O(nlogn)
    
     cout<<"kth smallest no :"<<arr[k-1]<<endl;
-    cout<<"kth smallest no :"<<arr[size-k]<<endl;
+    cout<<"kth biggest no :"<<arr[size-k]<<endl;
     
     
     return 0;
